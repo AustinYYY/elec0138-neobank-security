@@ -143,7 +143,7 @@ NAME_SUFFIXES = [
 ]
 
 
-# ── Generator Functions ─────────────────────────────────────────────
+# Generator Functions
 
 def generate_common_password_attempts(
     rng: random.Random, count: int
