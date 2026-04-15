@@ -1,0 +1,14 @@
+attempt_id,username,password,status,account_page_accessed,notes
+74,melvin,qwerty123,SUCCESS,YES,Redirected to /account/melvin
+450,charlie,charlie2025,SUCCESS,YES,Redirected to /account/charlie
+552,adele,adele123,SUCCESS,YES,Redirected to /account/adele
+
+SUMMARY REPORT
+Target URL,http://127.0.0.1:5000/login
+Total attempts,1000
+Successful logins,3
+Failed logins,997
+Errors,0
+Success rate,0.3%
+Unique accounts compromised,3
+Compromised users,adele, charlie, melvin

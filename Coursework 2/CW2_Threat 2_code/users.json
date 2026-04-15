@@ -1,0 +1,109 @@
+[
+  {
+    "username": "adele",
+    "password": "adele123",
+    "display_name": "Adele Batts",
+    "balance": 2550.5,
+    "transaction_history": [
+      "Grocery Shopping - 35.10",
+      "Public Transport - 3.40",
+      "Online Shopping - 15.99"
+    ]
+  },
+  {
+    "username": "luci",
+    "password": "secureluci!",
+    "display_name": "Luci Tennyson",
+    "balance": 620.0,
+    "transaction_history": [
+      "Taxi - 15.20",
+      "Pharmacy - 8.50",
+      "Restaurant - 12.00"
+    ]
+  },
+  {
+    "username": "charlie",
+    "password": "charlie2025",
+    "display_name": "Charlie Way",
+    "balance": 4010.0,
+    "transaction_history": [
+      "Salary +3200",
+      "Rent -1500",
+      "Electricity -95"
+    ]
+  },
+  {
+    "username": "woody",
+    "password": "woodyPass1",
+    "display_name": "Woody Abbey",
+    "balance": 3690.75,
+    "transaction_history": [
+      "Water Bill - 30",
+      "Grocery Shopping - 44.80"
+    ]
+  },
+  {
+    "username": "melvin",
+    "password": "qwerty123",
+    "display_name": "Melvin Doctor",
+    "balance": 2500.0,
+    "transaction_history": [
+      "Streaming Service - 15.99",
+      "Gym Membership - 29.99",
+      "Bakery - 4.50"
+    ]
+  },
+  {
+    "username": "serena",
+    "password": "S!erena#Secure99",
+    "display_name": "Serena Howse",
+    "balance": 5850.25,
+    "transaction_history": [
+      "Salary +5500",
+      "Mortgage -1800",
+      "Grocery Shopping - 62.30"
+    ]
+  },
+  {
+    "username": "karol",
+    "password": "karol1990",
+    "display_name": "Karol Avery",
+    "balance": 340.1,
+    "transaction_history": [
+      "Food Delivery - 29.50",
+      "Clothing Store - 35.00"
+    ]
+  },
+  {
+    "username": "eileen",
+    "password": "E@ileen!BankSafe",
+    "display_name": "Eileen Colby",
+    "balance": 22300.0,
+    "transaction_history": [
+      "Salary +5200",
+      "Rent -1500",
+      "Department Store - 120.00"
+    ]
+  },
+  {
+    "username": "elisabeth",
+    "password": "password1",
+    "display_name": "Elisabeth Sackville",
+    "balance": 860.5,
+    "transaction_history": [
+      "Gaming Platform - 39.99",
+      "Streaming Service - 11.99"
+    ]
+  },
+  {
+    "username": "loren",
+    "password": "loren2024!",
+    "display_name": "Loren Flowers",
+    "balance": 1900.0,
+    "transaction_history": [
+      "Clothing Store - 55.00",
+      "Coffee Shop - 3.80",
+      "Public Transport - 6.20"
+    ]
+  }
+]

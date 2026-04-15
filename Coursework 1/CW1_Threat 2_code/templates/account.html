@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NeoBank Account</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        .card {
+            max-width: 600px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .warning {
+            color: #aa0000;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to NeoBank</h1>
+
+    <div class="card">
+        <p><strong>Display Name:</strong> {{ user.display_name }}</p>
+        <p><strong>Username:</strong> {{ user.username }}</p>
+        <p><strong>Balance:</strong> £{{ "%.2f"|format(user.balance) }}</p>
+
+        <h3>Recent Transactions</h3>
+        <ul>
+            {% for item in user.transaction_history %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+
+        <p class="warning">
+            Coursework demo: if this page is reached through credential replay, it represents unauthorized account access.
+        </p>
+    </div>
+</body>
+</html>
