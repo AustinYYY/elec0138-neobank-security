@@ -30,9 +30,7 @@ CW1/
 ├── templates/
 │   ├── login.html
 │   └── account.html
-└── images for report/
-    ├── simulating attack.png
-    └── simulated attack result.png
+
 ```
 
 ### File Descriptions
