@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NeoBank MFA</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .box { max-width: 450px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        input { width: 100%; padding: 10px; margin-top: 8px; margin-bottom: 16px; box-sizing: border-box; }
+        button { padding: 10px 16px; }
+        .error { color: #b00020; }
+        .note { color: #666; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <h1>Multi-Factor Authentication</h1>
+    <div class="box">
+        <p><strong>User:</strong> {{ username }}</p>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <form method="POST" action="/mfa">
+            <label>Enter MFA Code</label>
+            <input type="text" name="mfa_code" required>
+
+            <button type="submit">Verify</button>
+        </form>
+
+        <p class="note">
+            Demo code for coursework prototype: <strong>246810</strong>
+        </p>
+    </div>
+</body>
+</html>

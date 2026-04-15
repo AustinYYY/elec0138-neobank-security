@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NeoBank Secure Login</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .box { max-width: 450px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        input { width: 100%; padding: 10px; margin-top: 8px; margin-bottom: 16px; box-sizing: border-box; }
+        button { padding: 10px 16px; }
+        button:disabled { opacity: 0.5; cursor: not-allowed; }
+        .error { color: #b00020; }
+        .note { color: #666; font-size: 14px; }
+        .captcha-box { background: #f5f5f5; padding: 12px; border-radius: 6px; margin-bottom: 16px; }
+        .captcha-question { font-size: 18px; font-weight: bold; margin-bottom: 8px; }
+        .captcha-status { font-size: 13px; margin-top: 4px; }
+        .captcha-pass { color: #2e7d32; }
+        .captcha-fail { color: #b00020; }
+    </style>
+</head>
+<body>
+    <h1>NeoBank Secure Customer Portal</h1>
+    <div class="box">
+        <h2>Secure Login</h2>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <form method="POST" action="/login_secure" id="loginForm">
+            <label>Username</label>
+            <input type="text" name="username" required>
+
+            <label>Password</label>
+            <input type="password" name="password" required>
+
+            {% if captcha_enabled %}
+            <div class="captcha-box">
+                <label>Solve to continue</label>
+                <p class="captcha-question">{{ captcha_a }} + {{ captcha_b }} = ?</p>
+                <input type="text" name="captcha_answer" id="captchaInput" placeholder="Your answer" autocomplete="off">
+                <p class="captcha-status" id="captchaStatus"></p>
+            </div>
+            {% endif %}
+
+            <button type="submit" id="submitBtn" {% if captcha_enabled %}disabled{% endif %}>Sign In</button>
+        </form>
+
+        <p class="note">
+            Protected with CAPTCHA, MFA, lockout, suspicious-login detection, and privacy-aware logging.
+        </p>
+    </div>
+
+    {% if captcha_enabled %}
+    <script>
+        var expectedAnswer = {{ captcha_a + captcha_b }};
+
+        document.getElementById('captchaInput').addEventListener('input', function () {
+            var userVal = this.value.trim();
+            var status = document.getElementById('captchaStatus');
+            var btn = document.getElementById('submitBtn');
+
+            if (parseInt(userVal) === expectedAnswer) {
+                status.textContent = 'CAPTCHA passed';
+                status.className = 'captcha-status captcha-pass';
+                btn.disabled = false;
+            } else {
+                status.textContent = userVal.length > 0 ? 'Incorrect, try again' : '';
+                status.className = 'captcha-status captcha-fail';
+                btn.disabled = true;
+            }
+        });
+    </script>
+    {% endif %}
+</body>
+</html>

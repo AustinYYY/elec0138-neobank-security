@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NeoBank Security Alerts</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .card { max-width: 900px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Suspicious Login Alerts</h1>
+    <div class="card">
+        {% if alerts %}
+            <ul>
+                {% for alert in alerts %}
+                    <li>
+                        <strong>[{{ alert.timestamp }}]</strong>
+                        masked_ip={{ alert.masked_ip }},
+                        user={{ alert.username }}
+                        <ul>
+                            {% for reason in alert.reasons %}
+                                <li>{{ reason }}</li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No alerts recorded.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
